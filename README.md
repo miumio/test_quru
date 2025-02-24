@@ -1,7 +1,7 @@
 # README
 
 ## Models: 
-User, Admin, Quiz, Category, Questions, Answers, Results
+User, Admin, Test, Category, Questions, Answers, Results
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
