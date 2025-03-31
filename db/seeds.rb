@@ -61,10 +61,10 @@ end
 puts "Creating passed tests..."
 
 tests_passed = [
-    { test_progress: 15, test_id: Test.first.id, user_id: users.first.id},
-    { test_progress: 2, test_id: Test.all[1].id, user_id: users.first.id},
-    { test_progress: 35, test_id: Test.all[2].id, user_id: users.last.id},
-    { test_progress: 95, test_id: Test.all[3].id, user_id: users.last.id},
+    { test_progress: 15, test_id: Test.first.id, user_id: users.first.id },
+    { test_progress: 2, test_id: Test.all[1].id, user_id: users.first.id },
+    { test_progress: 35, test_id: Test.all[2].id, user_id: users.last.id },
+    { test_progress: 95, test_id: Test.all[3].id, user_id: users.last.id }
 ]
 
 tests_passed.each do |test|
