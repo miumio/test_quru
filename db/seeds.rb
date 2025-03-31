@@ -1,5 +1,5 @@
 puts "Clearing database..."
-[ Answer, Question, Test, Category, User ].each(&:destroy_all)
+[ Answer, Question, TestResult, Test, Category, User ].each(&:destroy_all)
 
 puts "Creating categories..."
 categories = {
@@ -56,6 +56,19 @@ questions_answers.each do |test_title, questions|
       Answer.create!(body: answer, correct: index == q[:correct], question_id: question.id)
     end
   end
+end
+
+puts "Creating passed tests..."
+
+tests_passed = [
+    { test_progress: 15, test_id: Test.first.id, user_id: users.first.id},
+    { test_progress: 2, test_id: Test.all[1].id, user_id: users.first.id},
+    { test_progress: 35, test_id: Test.all[2].id, user_id: users.last.id},
+    { test_progress: 95, test_id: Test.all[3].id, user_id: users.last.id},
+]
+
+tests_passed.each do |test|
+    TestResult.create!(test)
 end
 
 puts "Seeding completed successfully!"
