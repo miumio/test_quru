@@ -1,0 +1,6 @@
+PreCommit:
+  RuboCop:
+    enabled: true
+    command: [ 'bundle', 'exec', 'rubocop' ]
+    flags: [ '--auto-correct', '--force-exclusion' ]
+    on_warn: fail
