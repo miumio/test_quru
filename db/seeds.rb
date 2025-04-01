@@ -61,14 +61,14 @@ end
 puts "Creating passed tests..."
 
 tests_passed = [
-    { test_progress: 15, test_id: tests.first.id, user_id: users.first.id },
-    { test_progress: 2, test_id: tests[1].id, user_id: users.first.id },
-    { test_progress: 35, test_id: tests[2].id, user_id: users.last.id },
-    { test_progress: 95, test_id: tests[3].id, user_id: users.last.id }
+  { test_progress: 15, test_id: tests.first.id, user_id: users.first.id },
+  { test_progress: 2, test_id: tests[1].id, user_id: users.first.id },
+  { test_progress: 35, test_id: tests[2].id, user_id: users.last.id },
+  { test_progress: 95, test_id: tests[3].id, user_id: users.last.id }
 ]
 
 tests_passed.each do |test|
-    TestResult.create!(test)
+  TestResult.create!(test)
 end
 
 puts "Seeding completed successfully!"
