@@ -21,10 +21,10 @@ users = User.create!(
 
 puts "Creating tests..."
 test_data = [
-  { title: "Основы Ruby", level: 1, category_id: Category.find_by(title: categories[:programming]).id, author_id: users.first.id },
-  { title: "SQL: базовые запросы", level: 2, category_id: Category.find_by(title: categories[:db]).id, author_id: users.last.id },
-  { title: "HTML и CSS", level: 1, category_id: Category.find_by(title: categories[:web]).id, author_id: users.last.id },
-  { title: "Rails для начинающих", level: 2, category_id: Category.find_by(title: categories[:web]).id, author_id: users.first.id }
+  { title: "Основы Ruby", level: 1, category_id: categories_records[0].id, author_id: users.first.id },
+  { title: "SQL: базовые запросы", level: 2, category_id: categories_records[2].id, author_id: users.last.id },
+  { title: "HTML и CSS", level: 1, category_id: categories_records[1].id, author_id: users.last.id },
+  { title: "Rails для начинающих", level: 2, category_id: categories_records[1].id, author_id: users.first.id }
 ]
 
 tests = Test.create!(test_data)
@@ -61,10 +61,10 @@ end
 puts "Creating passed tests..."
 
 tests_passed = [
-    { test_progress: 15, test_id: Test.first.id, user_id: users.first.id },
-    { test_progress: 2, test_id: Test.all[1].id, user_id: users.first.id },
-    { test_progress: 35, test_id: Test.all[2].id, user_id: users.last.id },
-    { test_progress: 95, test_id: Test.all[3].id, user_id: users.last.id }
+    { test_progress: 15, test_id: tests.first.id, user_id: users.first.id },
+    { test_progress: 2, test_id: tests[1].id, user_id: users.first.id },
+    { test_progress: 35, test_id: tests[2].id, user_id: users.last.id },
+    { test_progress: 95, test_id: tests[3].id, user_id: users.last.id }
 ]
 
 tests_passed.each do |test|
