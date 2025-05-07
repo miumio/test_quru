@@ -6,6 +6,8 @@ class Test < ApplicationRecord
   has_many :test_results, dependent: :destroy
   has_many :passed_tests, through: :test_results, source: :user
 
+  validates :title, presence: true, uniqueness: true
+
   def self.category_titles_desc(category_title)
     joins(:category)
       .where(categories: { title: category_title })
